@@ -122,13 +122,13 @@ func TestDBKV(t *testing.T) {
 		t.Fatal(n)
 	}
 
-	if n, err := db.BitCount(key5, 0, -1); err != nil {
+	if n, err := db.BitCount(key5, 0, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 1 {
 		t.Fatal(n)
 	}
 
-	if n, err := db.BitPos(key5, 1, 0, -1); err != nil {
+	if n, err := db.BitPos(key5, 1, 0, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 7 {
 		t.Fatal(n)
@@ -144,7 +144,7 @@ func TestDBKV(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if n, err := db.BitPos(key5, 0, 0, -1); err != nil {
+	if n, err := db.BitPos(key5, 0, 0, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 12 {
 		t.Fatal(n)
@@ -154,13 +154,13 @@ func TestDBKV(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if n, err := db.BitPos(key5, 1, 0, -1); err != nil {
+	if n, err := db.BitPos(key5, 1, 0, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 8 {
 		t.Fatal(n)
 	}
 
-	if n, err := db.BitPos(key5, 1, 2, -1); err != nil {
+	if n, err := db.BitPos(key5, 1, 2, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 16 {
 		t.Fatal(n)
@@ -170,7 +170,7 @@ func TestDBKV(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if n, err := db.BitPos(key5, 1, 0, -1); err != nil {
+	if n, err := db.BitPos(key5, 1, 0, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != -1 {
 		t.Fatal(n)
@@ -180,19 +180,19 @@ func TestDBKV(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	if n, err := db.BitCount(key5, 0, -1); err != nil {
+	if n, err := db.BitCount(key5, 0, -1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 26 {
 		t.Fatal(n)
 	}
 
-	if n, err := db.BitCount(key5, 0, 0); err != nil {
+	if n, err := db.BitCount(key5, 0, 0, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 4 {
 		t.Fatal(n)
 	}
 
-	if n, err := db.BitCount(key5, 1, 1); err != nil {
+	if n, err := db.BitCount(key5, 1, 1, "BYTE"); err != nil {
 		t.Fatal(err)
 	} else if n != 6 {
 		t.Fatal(n)
