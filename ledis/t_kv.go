@@ -835,6 +835,16 @@ func (db *DB) BitPos(key []byte, on int, start int, end int, bitMode string) (in
 		start, end = getRange(start, end, len(value))
 	}
 
+	// Make sure end does not cross the boundary
+    if end >= len(value) {
+        end = len(value) - 1
+    }
+    
+    if start > end {
+        return -1, nil
+    }
+
+
 	value = value[start : end+1]
 
 	for i, v := range value {
